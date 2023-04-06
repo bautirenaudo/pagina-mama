@@ -184,7 +184,7 @@ nav {
     transform: translateY(80px);
     font-size: 12px;
     cursor: pointer;
-    transition: all .2s;
+    transition: background-color .2s;
 }
 
 .titulo-centro button:hover {
@@ -277,7 +277,7 @@ nav {
 
     .paleta {
         right: 50%;
-        transform: translateX(50%);
+        translate:50%;
     }
 
     nav {
