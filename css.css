@@ -110,7 +110,7 @@ nav {
     position: fixed;
     top: 0;
     left: 0;
-    background: rgb(0, 0, 0, 0.2);
+    background: var(--main-color);
     backdrop-filter: blur(25px);
     z-index: 100;
     text-align: right;
@@ -118,7 +118,7 @@ nav {
     padding-right: 40px;
     padding-bottom: 30px;
 
-    transition: transform .3s;
+    transition: all .3s;
     margin-left: 12px;
     transform: translateX(calc(-100% + 12px));
 }
@@ -127,9 +127,11 @@ nav .menu-button {
     display: block;
     position: absolute;
     top: 30px;
-    right: -15px;
+    right: -20px;
     cursor: pointer;
     transition: transform 1s;
+    transition: fill .3s;
+    fill: #fff;
 }
 
 .ul1 {
@@ -143,13 +145,18 @@ nav .menu-button {
     cursor: pointer;
 }
 
+.ul1 li:hover > span{
+    transform: translateX(-100%);
+}
+
 .ul1 li span {
     display: block;
     width: 0%;
-    transition: width 1s;
+    
     height: 3px;
     background-color: rgb(255, 255, 255);
     margin-top: 5px;
+    transition: transform .3s , width 1s;
 }
 
 .ul2 {
