@@ -1,6 +1,41 @@
 (function () {
+    //PARALAX
+    window.addEventListener("scroll", () => {
+        let scrollY = document.documentElement.scrollTop;
+
+        document.querySelector(".hero .titulo-centro h1").style.transform = `translateY(${scrollY * -0.2}px)`;
+        document.querySelector(".hero .titulo-centro .linea").style.transform = `translateX(${scrollY * 0.2}px)`;
+        document.querySelector(".hero .titulo-centro button").style.cssText = `translate:0 ${scrollY * 0.1}px;`;
+    })
+
 
     //HERO
+    const menu = () => {
+        let indice = 0;
+
+        document.querySelector("nav .menu-button").addEventListener("click", () => {
+            if (indice == 0) {
+                document.querySelector("nav").style.cssText = "transform: translateX(calc(0% - 12px));";
+                document.querySelector("nav .menu-button").style.cssText = "transform: rotate(-180deg);";
+                setTimeout(() => {
+                    document.querySelectorAll(".ul1 li span").forEach(e => {
+                        e.style.cssText = "width: 100%;";
+                    })
+                }, 300);
+                indice = 1;
+            }
+            else if (indice == 1) {
+                document.querySelector("nav").style.cssText = "transform: translateX(calc(-100% + 12px));";
+                document.querySelector("nav .menu-button").style.cssText = "transform: rotate(0deg);"
+                    document.querySelectorAll(".ul1 li span").forEach(e => {
+                        e.style.cssText = "width: 0%;";
+                    })
+                indice = 0;
+            }
+        })
+    }
+    menu()
+
     const carrusel = () => {
         let i = 1;
         const fotos = [
@@ -24,7 +59,7 @@
     const asignarPaleta = () => {
         document.querySelectorAll(".paleta .color").forEach((colorElement, i) => {
             colorElement.addEventListener("click", () => {
-                document.querySelector("body").classList.remove("celeste", "naranja", "amarillo", "verde", "rosa")
+                document.querySelector("body").classList.remove("celeste", "naranja", "rojo", "verde", "rosa")
                 document.querySelector("body").classList.add(colorElement.dataset.colorname)
             })
         })

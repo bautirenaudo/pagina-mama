@@ -29,9 +29,9 @@ body.naranja {
     --second-color: #A44F1F;
 }
 
-body.amarillo {
-    --main-color: #FCFF5B;
-    --second-color: #888A25;
+body.rojo {
+    --main-color: #FF5B5B;
+    --second-color: #922121;
 }
 
 body.verde {
@@ -118,10 +118,18 @@ nav {
     padding-right: 40px;
     padding-bottom: 30px;
 
-    margin-left: 30px;
+    transition: transform .3s;
+    margin-left: 12px;
+    transform: translateX(calc(-100% + 12px));
+}
 
-    /*transform: translateX(calc(0% - 6px));*/
-    transform: translateX(calc(-100% + 6px));
+nav .menu-button {
+    display: block;
+    position: absolute;
+    top: 30px;
+    right: -15px;
+    cursor: pointer;
+    transition: transform 1s;
 }
 
 .ul1 {
@@ -137,7 +145,8 @@ nav {
 
 .ul1 li span {
     display: block;
-    width: 100%;
+    width: 0%;
+    transition: width 1s;
     height: 3px;
     background-color: rgb(255, 255, 255);
     margin-top: 5px;
@@ -162,7 +171,7 @@ nav {
     display: block;
     height: 1px;
     width: 100%;
-    background-color: rgb(113, 113, 113);
+    background-color: var(--main-color);
     margin: 12px 0;
 }
 
@@ -277,16 +286,8 @@ nav {
 
     .paleta {
         right: 50%;
-        translate:50%;
+        translate: 50%;
     }
-
-    nav {
-        margin-left: 8px;
-
-        /*transform: translateX(calc(0% - 8px));*/
-        transform: translateX(calc(-100% + 8px));
-    }
-
 
     .titulo-centro {
         margin-left: 40px;
